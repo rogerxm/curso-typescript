@@ -1,13 +1,6 @@
-import { genericFunction, genericFuntionArrow } from "./generics/generics";
+import { getPokemon } from "./generics/get-pokemon";
 
-// printObject(123);
-// printObject(new Date());
-// printObject({ a: 1, b: 2, c: 3 });
-// printObject(["1", "2", "3", "4"]);
-// printObject("HOLAAAAA");
-
-const name: string = "Roger";
-
-console.log(genericFuntionArrow(123).toFixed(2));
-console.log(genericFuntionArrow(name).toUpperCase());
-console.log(genericFuntionArrow(new Date()).getDate());
+getPokemon(4)
+  .then((pokemon) => console.log(pokemon.sprites.front_default))
+  .catch((error) => console.log(error))
+  .finally(() => console.log("Fin de getPokemon()"));
